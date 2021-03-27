@@ -1,0 +1,26 @@
+{
+    "files.exclude": {
+        "**/**.log": true,
+        "**/**.idx": true,
+        "**/**.gz": true,
+        "**/**.toc": true,
+        "**/**.aux": true,
+        "**/**.out": true,
+        "**/**.bbl": true,
+        "**/**.blg": true,
+        "**/__latexindent_temp.tex": true,
+        "**.aux": true,
+        "**.log": true,
+        "**.toc": true,
+        "**.idx": true,
+        "**.gz": true,
+        "**.lof": true,
+        "**.lot": true,
+        "**.out": true,
+        "**.bbl": true,
+        "**.fls": true,
+        "**.fdb_latexmk": true,
+        "**.blg": true,
+        "**.dvi": true
+    }
+}
