@@ -1,0 +1,36 @@
+on: push
+
+jobs:
+  ComPile_PDF_With_Tags:
+    runs-on: ubuntu-latest
+    name: Compile PDF with Tags
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Compile Tex File
+        id: compile_tex_file
+        uses: tsukuba-mas/platex-action@main
+        with:
+          LATEX_FILE_NAME: "main.tex"
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        with:
+          tag_name: ${{github.ref}}
+          release_name: Release ${{ github.ref }}
+          body: |
+            Compiled PDF ${{github.ref}}
+          draft: false
+          prerelease: false
+      - name: Upload Release Asset
+        id: upload_release_asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./main.pdf
+          asset_name: main.pdf
+          asset_content_type: application/pdf
