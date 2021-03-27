@@ -9,7 +9,7 @@ jobs:
         uses: 1466587594/get-current-time@v2
         id: current_time
         with:
-          format: YYYY/MM/DD
+          format: YYYY/MM/DD-HH:mm:ss
           utcOffset: "+09:00"
       - name: Set up Git repository
         uses: actions/checkout@v2
@@ -44,3 +44,6 @@ jobs:
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_USERNAME: weekly-report
+          SLACK_ICON_EMOJI: ":bell:"
+          SLACK_MESSAGE: "${{steps.upload_release_asset.outputs.browser_download_url}}"
