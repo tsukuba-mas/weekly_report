@@ -5,6 +5,12 @@ jobs:
     runs-on: ubuntu-latest
     name: Compile PDF with Tags
     steps:
+      - name: Get Current Time
+        uses: 1466587594/get-current-time@v2
+        id: current_time
+        with:
+          format: YYYY/MM/DD
+          utcOffset: "+09:00"
       - name: Set up Git repository
         uses: actions/checkout@v2
       - name: Compile Tex File
@@ -18,10 +24,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
-          tag_name: Weekly
-          release_name: Release Weekly
+          tag_name: ${{steps.current_time.outputs.formattedTime}}
+          release_name: Release ${{steps.current_time.outputs.formattedTime}}
           body: |
-            Compiled PDF Weekly
+            Compiled PDF Weekly ${{steps.current_time.outputs.formattedTime}}
           draft: false
           prerelease: false
       - name: Upload Release Asset
