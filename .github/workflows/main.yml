@@ -4,9 +4,9 @@ on:
       - "v*"
 
 jobs:
-  test_job:
+  ComPile_PDF_With_Tags:
     runs-on: ubuntu-latest
-    name: Example of compiling pdf
+    name: Compile PDF with Tags
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v2
