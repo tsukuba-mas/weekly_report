@@ -21,6 +21,7 @@
         "**.fls": true,
         "**.fdb_latexmk": true,
         "**.blg": true,
-        "**.dvi": true
+        "**.dvi": true,
+        "__latexindent_temp.pdf": true
     }
 }
