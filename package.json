@@ -1,0 +1,31 @@
+{
+  "name": "weekly_report",
+  "version": "1.0.0",
+  "description": "毎週論文を書いてアップデートしていく「週論」の試みです．   アジャイルの手法を用いて研究に立ち向かいます．",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsukuba-mas/weekly_report.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tsukuba-mas/weekly_report/issues"
+  },
+  "homepage": "https://github.com/tsukuba-mas/weekly_report#readme",
+  "devDependencies": {
+    "prh": "^5.4.4",
+    "textlint": "^11.9.0",
+    "textlint-filter-rule-comments": "^1.2.2",
+    "textlint-plugin-latex2e": "^1.1.0",
+    "textlint-rule-preset-ja-engineering-paper": "^1.0.2",
+    "textlint-rule-preset-ja-spacing": "^2.0.2",
+    "textlint-rule-preset-ja-technical-writing": "^4.0.1",
+    "textlint-rule-preset-jtf-style": "^2.3.8",
+    "textlint-rule-prh": "^5.3.0",
+    "textlint-rule-spellcheck-tech-word": "^5.0.0"
+  }
+}
