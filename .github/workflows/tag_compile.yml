@@ -4,7 +4,7 @@ on:
       - "v*"
 
 jobs:
-  ComPile_PDF_With_Tags:
+  Compile_PDF_With_Tags:
     runs-on: ubuntu-latest
     name: Compile PDF with Tags
     steps:
